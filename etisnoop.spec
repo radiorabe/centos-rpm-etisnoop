@@ -33,6 +33,8 @@ Source0:        https://github.com/Opendigitalradio/%{name}/archive/%{version}.t
 
 BuildRequires:  cmake
 BuildRequires:  faad2-devel
+BuildRequires:  libfec-odr-devel
+
 
 %description
 The ETSnoop analyser decodes and prints out a RAW ETI file in a form that makes

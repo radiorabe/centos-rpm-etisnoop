@@ -32,6 +32,7 @@ URL:            https://github.com/Opendigitalradio/%{name}
 Source0:        https://github.com/Opendigitalradio/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
+BuildRequires:  faad2-devel
 
 %description
 The ETSnoop analyser decodes and prints out a RAW ETI file in a form that makes

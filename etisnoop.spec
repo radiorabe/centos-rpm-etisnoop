@@ -23,15 +23,14 @@
 #
 
 Name:           etisnoop
-Version:        master
+Version:        1.1.0
 Release:        1%{?dist}
 Summary:        ETISnoop analyser
 
 License:        GPLv3+
 URL:            https://github.com/Opendigitalradio/%{name}
-Source0:        https://github.com/Opendigitalradio/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        https://github.com/Opendigitalradio/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires:  cmake
 BuildRequires:  faad2-devel
 BuildRequires:  libfec-odr-devel
 
@@ -44,13 +43,10 @@ the FIGs, and extract a DAB+ subchannel into a fil
 %prep
 %setup -q
 
-# Fix compilation on CentOS ("error: expected ')' before 'PRId64'")
-sed -i -e 's/^\(#include\) <inttypes.h>/\1 <cinttypes>/' \
-    etisnoop.cpp utils.hpp wavfile.h
-
 
 %build
-%cmake .
+autoreconf -fi
+%configure
 make %{?_smp_mflags}
 
 %install
@@ -61,5 +57,8 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Tue Oct 04 2016 Christian Affolter <c.affolter@purplehaze.ch> - 1.1.0-1
+- Switched from Git master to official release, upstream is using autotools now
+
 * Sat Aug 27 2016 Christian Affolter <c.affolter@purplehaze.ch> - master-1
 - Initial release

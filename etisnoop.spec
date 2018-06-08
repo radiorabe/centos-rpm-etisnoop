@@ -23,7 +23,7 @@
 #
 
 Name:           etisnoop
-Version:        1.1.0
+Version:        2.0.0
 Release:        1%{?dist}
 Summary:        ETISnoop analyser
 
@@ -33,6 +33,7 @@ Source0:        https://github.com/Opendigitalradio/%{name}/archive/v%{version}.
 
 BuildRequires:  faad2-devel
 BuildRequires:  libfec-odr-devel
+BuildRequires:  gcc-c++
 
 
 %description
@@ -57,6 +58,9 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Fri Jun 08 2018 Lucas Bickel <hairmare@rabe.ch> - 2.0.0-1
+- Bump to latest upstream version
+
 * Tue Oct 04 2016 Christian Affolter <c.affolter@purplehaze.ch> - 1.1.0-1
 - Switched from Git master to official release, upstream is using autotools now
 

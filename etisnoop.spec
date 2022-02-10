@@ -1,7 +1,7 @@
 #
 # spec file for package etisnoop
 #
-# Copyright (c) 2016 - 2018 Radio Bern RaBe
+# Copyright (c) 2016 - 2022 Radio Bern RaBe
 #                           http://www.rabe.ch
 #
 # This program is free software: you can redistribute it and/or
